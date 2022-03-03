@@ -61,6 +61,15 @@ html {
     box-sizing: border-box;
 }
 
+.coating.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
 .action-hover-rgba:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -174,6 +183,10 @@ html {
     font-size: 1.2rem;
     height: 27px;
     padding: 6px 19px;
+}
+
+.button.is-small:hover {
+    animation: growth ease 0.4s
 }
 
 .button.button-gold {
@@ -311,6 +324,19 @@ html {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.info-name-player {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    text-decoration: none;
+    color:var(--white-color);
+    text-transform: capitalize;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 }
@@ -484,3 +510,199 @@ html {
 
 
 
+/* Animation*/
+/* @keyframes : nhìn thấy đc chuyển động  */
+@keyframes fadeIn{
+    /* kiểu hện dần lên */
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes hederNotifyGrowth {
+    /* kiểu lớp dần lên  */
+    from {
+        opacity: 0; /*  hiện mờ đần dần  */
+        transform: scale(0); /*  hiện dần lên   */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: translatey(-500px);
+        opacity: 0;
+        /* transform: scale(var(--growth-form)); */
+    }
+    to {
+        transform: translatey(0);
+        opacity: 1;
+        /* transform: scale(var(--growth-to)); */
+    }
+}
+
+@keyframes row {
+    from{
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    to{
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes to-up {
+    from{
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+    to{
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+@keyframes row_2 {
+    from{
+        transform: scale(1.5);
+        opacity: 0.4;
+    }
+    to{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes sizeImg {
+    from{
+        background-size: 100%;
+    }
+    to{
+        background-size: calc(100% + 60px);
+    }
+}
+
+@keyframes twirl {
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        /* 180 độ */
+        transform:rotate(360deg); 
+    }
+}
+
+
+/* thu fnsenfjndndsnvskdnvksnvlknslknvlksnmvlkm */
+@keyframes growth {
+    from {
+        /*tỷ lệ ( to dần lên )*/
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@-webkit-keyframes mymove {
+    from {
+        top: -900px;
+    }
+
+    to {
+        top: 300px;
+    }
+}
+
+@-webkit-keyframes mymoveProduct {
+    from {
+        top:  200px;
+        opacity: 0;
+    }
+
+    to {
+        top:  0;
+        opacity: 1;
+    }
+}
+
+@keyframes example {
+    0% {
+        border: 2px solid #ccc; 
+        transform: scale(1);
+    }
+    100% {
+        border: 1px solid rgba(255, 255, 255, 0.3);  
+        transform: scale(1.5);
+    }
+}
+
+@keyframes exampleActive {
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+    
+}
+
+@keyframes twirl {
+    0%{
+        opacity: 0;
+        /* dộ (quay 360độ ) */
+        transform:rotate(0);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes turnX {
+    0%{
+        opacity: 0;
+        /* dộ (quay 360độ ) */
+        transform:rotatex(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotatex(0);
+    }
+    
+}
+
+@keyframes turn {
+    0%{
+        opacity: 0;
+        /* dộ (quay chiều y ) */
+        transform:rotateY(-180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotatey(0);
+    }
+    
+}

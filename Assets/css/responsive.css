@@ -101,6 +101,8 @@
         z-index: 2;
         height: var(--sidebar-height);
         background-color: var(--sidebar-popup-bg);
+        animation: turn ease-in 1s;
+        z-index: 10;
     }
 
     .app__sidebar.expand  .sidebar__navbar-link span,
@@ -163,7 +165,7 @@
 /* Mobile  max-width: 739px*/
 @media (max-width: 46.1875em) {
     
-    .hide-on-mobile {
+    .hide-on-mobile { 
         display: none;
     } 
     /* top tab hom */
@@ -183,9 +185,21 @@
         margin-left: 0;
     }
 
+    .container__play-all {
+        display: none !important;
+    }
+
+    .playlist__list-header {
+        margin: 0;
+    }
+
+    .playlist__list-title {
+        padding-left: 46px;
+    }
+
     /* top content__navbar */
     .content__navbar {
-        width: 322px;
+        width: 316px;
         margin: auto;
     }
 
@@ -199,6 +213,37 @@
     }
     /* end content__navbar */
 
+    /* top tab song */
+    .playlist__song-time {
+        display: none;
+    }
+
+    .playlist__song-check {
+        min-width: 35px;
+    }
+    /* end tab song */
+
+
     /* end tab hom */
+    /* top app player tùy chọn sử dụng song */
+    .player__container-song {
+        flex-basis: 50%;
+    }
+
+    .player__container-control {
+       display: flex;
+       align-items: center;
+       justify-content: right;
+       flex-basis: 60%;
+    }
+
+    .player__control-btn {
+        height: auto;
+    }
+
+    .player__control-item {
+        margin: 0 0 0 16px;
+    }
+    /* end app player tùy chọn sử dụng song */
 
 }

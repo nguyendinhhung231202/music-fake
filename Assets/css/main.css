@@ -42,6 +42,7 @@
     flex-direction: column;
     background-color: var(--sidebar-bg);
     -webkit-tap-highlight-color: transparent;
+    transition: all linear 0.2s;
 }
 
 .sidebar__logo {
@@ -330,6 +331,7 @@
 /* end menu */
 
 .sidebar__create-playlist {
+    min-height: 50px;
     width: 240px;
     display: flex;
     flex: 1;
@@ -764,7 +766,6 @@
 }
 
 .app__header-options {
-    /* display: none; */
     background-color: var(--bg-content-color);
     margin-left: 10px;
     padding: 7px 8px;
@@ -861,13 +862,14 @@
 }
 
 .content__menu-item {
-    color: var(--white-color);
+    color: var(--text-color);
     position: relative;
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 4px 26px;
     cursor: pointer;
-    opacity: 0.8;
+    z-index: 1;
+
 }
 
 .content__menu-item.active {
@@ -875,18 +877,16 @@
     background-color: var(--menu-bg);
     border-radius: 100px;
     opacity: 1;
-}
-
-.content__menu-item:hover .content__sub-list {
-    display: block;
+    animation: growth ease 0.4s
 }
 
 .content__menu-item:hover {
-    opacity: 1;
     background-color: var(--menu-bg);
     border-radius: 100px;
-    opacity: 1;
+    color: var(--white-color);
+
 }
+
 
 /* .content__menu-border-radius:hover {
     background-color: var(--menu-bg);
@@ -908,8 +908,13 @@
     top: calc(var(--height-menu ) + 4px);
     left: -64px;
     border-radius: 8px;
+    opacity: 1;
     display: none;
-    z-index: 1;
+    z-index: 99999999;
+}
+
+.content__sub-list.open {
+    display: block;
 }
 
 .content__sub-list::after {
@@ -930,6 +935,11 @@
     opacity: 0.8;
 }
 
+.content__sub-item.active {
+    background-color: var(--bg-content-color);
+    opacity: 1;
+}
+
 .content__sub-item:hover {
     background-color: var(--bg-content-color);
     opacity: 1;
@@ -947,6 +957,8 @@
 /* <!--  top tab home --> */
 .container__tab {
     display: none;
+    animation: mymoveProduct ease-in 1s;
+    position: relative;
 }
 
 .container__tab.active {
@@ -1199,7 +1211,11 @@
     margin-top: 2px;
     text-transform: capitalize;
     color: var(--text-secondary);
-
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .playlist__song-time {
@@ -1568,6 +1584,7 @@
 .player__container-left {
     width: 64px;
     height: 64px;
+    padding-top: 6px;
 }
 
 .player__container-img {
@@ -1589,7 +1606,7 @@
 
 .container__info-link {
     text-decoration: none;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .player__container-song__options {
